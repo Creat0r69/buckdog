@@ -10,62 +10,10 @@
     <link rel="stylesheet" href="style.css"/>
     <title>$BUCK</title>
     <meta name="description" content="The cutest dog BUCK, is going to a BUCK."/>
-    <link rel="canonical" href="index.html"/>
-    <link rel="shortlink" href="index.html"/>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 </head>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var audioElem = document.getElementById("myAudio");
-        audioElem.pause();
-        audioElem.muted = true;
-        audioElem.volume = 0;
-
-        function updateMuteButtonText() {
-            var muteBtn = document.getElementById("muteButton");
-            muteBtn.textContent = audioElem.muted ? "SONG" : "MUTE";
-        }
-
-        function fadeInVolume(targetVolume, duration) {
-            var volumeStep = targetVolume / (duration / 100);
-            var currentVolume = audioElem.volume;
-            var fadeInterval = setInterval(function () {
-                currentVolume += volumeStep;
-                if (currentVolume >= targetVolume) {
-                    audioElem.volume = targetVolume;
-                    clearInterval(fadeInterval);
-                } else {
-                    audioElem.volume = currentVolume;
-                }
-            }, 100);
-        }
-
-        function toggleMute() {
-            if (audioElem.muted) {
-                audioElem.muted = false;
-                audioElem
-                    .play()
-                    .then(() => {
-                        fadeInVolume(0.1, 5000);
-                    })
-                    .catch((e) => console.error("Playback failed:", e));
-            } else {
-                audioElem.muted = true;
-                audioElem.pause();
-                audioElem.volume = 0;
-            }
-            updateMuteButtonText();
-        }
-
-        var muteBtn = document.getElementById("muteButton");
-        muteBtn.addEventListener("click", toggleMute);
-
-        updateMuteButtonText();
-    });
-</script>
-
 <body>
 
 <audio id="myAudio" autoplay loop>
@@ -85,7 +33,7 @@
 
 <div class="navigation-bar">
     <a class="link"
-       href="https://raydium.io/swap/?inputMint=sol&amp;outputMint=3B5wuUrMEi5yATD7on46hKfej3pfmd7t1RKgrsN3pump"
+       href="https://raydium.io"
     >BUY</a
     >
     <a class="link" href="https://linktr.ee/">LINKS</a>
